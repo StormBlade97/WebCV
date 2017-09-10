@@ -4,7 +4,9 @@ import styled from 'styled-components'
 const Text = styled.span`
     transition: all 0.3s ease;
     animation: fadeInLeft 0.3s ease 1;
-    font-family: 'Montserrat', sans-serif;
+    font-family: ${
+        ({normal}) => normal ? 'Open-sans' : 'Montserrat'
+    }, sans-serif;
     font-size: ${
         ({ fontSize }) => fontSize || '1rem'
     };
@@ -16,6 +18,12 @@ const Text = styled.span`
             return 'normal'
         }
     };
-    color: ${({ color, ...props }) => color || props.theme.textColor};
+    color: ${
+        ({ color, primary, ...props }) => {
+            if (color) return color
+            if (primary) return props.theme.primary
+            return props.theme.textColor
+        }
+    };
 `
 export default Text;
