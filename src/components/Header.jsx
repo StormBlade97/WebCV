@@ -9,13 +9,27 @@ const HeaderWrapper = styled.div`
 const TextBox = styled.div`
     text-align: center;
 `
+const Title = styled(Text)`
+    font-size: 3rem;
+    @media only screen and (max-width: 768px) {
+        font-size: 2rem;
+    }
+`
+const Subtitle = styled(Text)`
+    font-size: 1.5rem;
+    @media only screen and (max-width: 768px) {
+        font-size: 1rem;
+    }
+`
 const Header = props => (
     <HeaderWrapper style={props.style}>
         <TextBox>
-            <Text medium fontSize={'56px'} color={grey[900]}>{props.main}</Text>
-            <Text medium fontSize={'56px'} primary>{props.mainColored}</Text>
+            <Title medium color={props.color || grey[900]}>{props.main}</Title>
+            <Title medium primary>{props.mainColored}</Title>
         </TextBox>
-        <TextBox><Text light fontSize={'18px'} color={grey[900]}>{props.subtitle}</Text></TextBox>
+        <TextBox>
+            <Subtitle light fontSize={'18px'} color={props.color || grey[900]}>{props.subtitle}</Subtitle>
+        </TextBox>
     </HeaderWrapper>
 )
 

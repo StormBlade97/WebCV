@@ -11,6 +11,7 @@ const LayoutWrapper = styled.div`
     jusitfy-content: center;
 `
 const Bulb = styled.div`
+    transition: all ease 0.7s;
     width: ${({size}) => size};
     height: ${({size}) => size};
     border-radius: 50%;

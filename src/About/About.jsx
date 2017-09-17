@@ -1,7 +1,7 @@
 import React from 'react'
 import Grid from 'material-ui/Grid'
 import Header from '../components/Header'
-import Text from '../components/Text'
+import Text, { ExpandedText, StrongText } from '../components/Text'
 import CarouselIndicator from './Carousel'
 import styled from 'styled-components'
 import * as colors from 'material-ui/colors'
@@ -54,22 +54,22 @@ class About extends React.PureComponent {
                 />
                 <GreyContainer container>
                     <TextBox style={{ padding: 24 }} item sm={5} xs={12}>
-                        <Text style={{ marginBottom: 16 }} medium fontSize={'36px'} color={colors.grey[800]}>SUMMARY</Text>
-                        <Text normal color={colors.grey[800]}>
+                        <StrongText style={{ marginBottom: 16 }} color={colors.grey[800]}>SUMMARY</StrongText>
+                        <ExpandedText justify normal color={colors.grey[800]}>
                             I am an apt, disciplined and inquisitive front-end developer.
                             I focus mainly developing performant, maintainable, feature-rich web application using React tech stack. I am also capable of designing and implement modern, user friendly UI.
                             I have strong on-hand experience and relevant
                             formal education.
                             My short term for the end of 2017 is to transform to a fullstack developer. Currently working on ExpressJS. I am also interested in making progressive web apps, and port apps to desktop via Electron.
-                        </Text>
+                        </ExpandedText>
                     </TextBox>
-                    <CarouselGrid style={{ padding: 24, paddingBottom: 36, position: 'relative' }} item sm={7} xs={12}>
+                    <CarouselGrid style={{ padding: 24, paddingBottom: 28, position: 'relative' }} item sm={7} xs={12}>
                         <Grid style={{ minHeight: '100%' }} container>
                             <TextBox item md={6} sm={12} xs={12}>
-                                <Text style={{ marginBottom: 16 }} medium fontSize={'20px'}>REASON #{this.state.index +1} WHY YOU SHOULD CHOOSE ME</Text>
-                                <Text light normal>
+                                <ExpandedText fontSize={'1.2rem'} style={{ marginBottom: 16 }} medium >REASON #{this.state.index +1} WHY YOU SHOULD CHOOSE ME</ExpandedText>
+                                <ExpandedText justify light normal>
                                    {this.state.reasons[this.state.index]}
-                                </Text>
+                                </ExpandedText>
                             </TextBox>
                             <Grid style={{ minHeight: '30vh' }} item md={6} sm={12} xs={12}>
                                 <Picture imgSrc={images[0]} />
