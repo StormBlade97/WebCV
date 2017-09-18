@@ -42,6 +42,7 @@ const HeaderWrapper = styled(ButtonBase)`
         background-color: rgba(255, 255, 255, 0.3) !important;
     }
     &::after {
+        display: ${props => (props.hasDot ? 'block' : 'none')};
         transition: 0.7s ease;        
         content: "";
         position: absolute;
@@ -104,25 +105,27 @@ const Timestamp = props => (
         <Text light fontSize={'14px'} style={{ marginRight: 8 }}>{props.children}</Text>
     </AnchorRoot>
 )
-const Header = props => (
-    <HeaderWrapper onClick={props.onClick} active={props.open} fullWidth>
-        <Timestamp>{props.timestamp}</Timestamp>
+export const Header = props => (
+    <HeaderWrapper onClick={props.onClick} disabled={!props.onClick} active={props.open} hasDot={props.hasDot} fullWidth>
+        { props.hasDot && <Timestamp>{props.timestamp}</Timestamp> }
         { props.leftIcon && <HeaderIcon> {props.leftIcon} </HeaderIcon>}
         <HeaderLabel>
-            <Text style={{ textAlign: 'left' }} medium fontSize={"20px"} color="white">{ props.title }</Text>
-            <Text style={{ textAlign: 'left' }} normal light color="white" fontSize={"14px"}>{ props.subtitle }</Text>
+            <Text style={{ textAlign: 'left' }} medium fontSize={"20px"} color={props.headerColor}>{ props.title }</Text>
+            <Text style={{ textAlign: 'left' }} normal light color={props.headerColor} fontSize={"14px"}>{ props.subtitle }</Text>
         </HeaderLabel>
     </HeaderWrapper>
 )
 const Panel = props => (
     <FullSizeWrapper>
         <Header
+            hasDot={props.hasDot ? props.hasDot : true}
             onClick={props.onClick}
             leftIcon={props.leftIcon}
             title={props.title}
             subtitle={props.subtitle}
             open={props.open}
-            timestamp={props.timestamp}           
+            timestamp={props.timestamp} 
+            headerColor={props.headerColor || "white"}          
         />
         <CollapsibleWrapper open={props.open}>
             <Body>

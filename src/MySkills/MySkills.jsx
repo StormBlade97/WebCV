@@ -19,9 +19,7 @@ const LogoBox = styled(IconBox)`
 `
 const LogoGrid = styled(Grid)`
     position: relative;
-    background: #000000;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #434343, #000000);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #434343, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: ${grey[900]};  /* fallback for old browsers */
     border-radius: 1em 0 0 1em;
     padding: 24px !important;
     z-index: 2;
