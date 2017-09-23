@@ -10,18 +10,13 @@ import Timeline, { ProjectTimeline } from './Timeline'
 
 const SwipeableContainer = styled(SwipeableViews)`
     margin-top: 40px;
-    width: 100%;
     height: auto !important;
+    padding: 12px;
+    overflow: hidden;
 `
 const TabsContainer = ({ children, className, ...props }) => (
     <Tabs {...props} indicatorColor="primary" textColor="primary" className={className}>{children}</Tabs>
 )
-const CentralWrapper = styled.div`
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-`
 
 class ExperienceNProject extends PureComponent {
     state = {

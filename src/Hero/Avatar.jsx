@@ -1,20 +1,24 @@
 import React from 'react'
 import MuiAvatar from 'material-ui/Avatar'
-import { withStyles } from 'material-ui/styles'
-import avatarUrl from './static/Avatar.svg'
+import styled from 'styled-components'
+import avatarUrl from './static/Profile.png'
 
-const styles = {
-    Avatar: {
-        root: {
-            width: 240,
-            height: 240
-        }
+const Avatar = styled(MuiAvatar)`
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 400px !important;
+    margin: 0 !important;
+
+    @media only screen and (max-width: 1200px) {
+        width: 300px !important;
     }
-}
-const Avatar = withStyles(styles.Avatar)(MuiAvatar);
+    @media only screen and (max-width: 768px) {
+        width: 250px !important;
+    }
+`;
 
 const MyAvatar = props => (
-    <Avatar src={avatarUrl} className={props.className}/> 
+    <Avatar {...props} src={avatarUrl} className={props.className}/> 
 )
 
 export default MyAvatar;

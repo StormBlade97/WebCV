@@ -39,21 +39,25 @@ const LogoGrid = styled(Grid)`
         z-index: -1;
     }
 `
+const Container = styled.div`
+    max-width: ${props => props.theme.maxWidth};
+    min-height: 600px;
+`
 const Icon = ({ spacing, type, color }) => (
     <RawIcon color ={color} size={'48px'} iconClassName={`devicon-${type}-plain colored`} spacing={8} />
 )
 class MySkills extends PureComponent {
     render() {
         return (
-            <div>
+            <Container>
                 <Header
                     style={{ marginBottom: '46px' }}
                     main={"MY "}
                     mainColored={"SKILLS"}
                     subtitle={"What I'm capable of"}
                 />
-                <Grid container>
-                    <TextBox item md={6} xs={12}>
+                <Grid container style={{ minHeight: '400px' }}>
+                    <TextBox item lg={5} md={12} sm={12} xs={12}>
                         <StrongText style={{ marginBottom: 16 }} color={colors.grey[800]}>
                             I CAN BUILD PERFORMANT AND BEAUTIFUL WEB APP
                         </StrongText>
@@ -63,7 +67,7 @@ class MySkills extends PureComponent {
                         Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged
                         </Text>
                     </TextBox>
-                    <LogoGrid item md={6} sm={12} xs={12} >
+                    <LogoGrid item lg={7} md={12} sm={12} xs={12} >
                         <Text style={{ marginBottom: 16 }} medium fontSize={'1.2rem'}>
                             TECH STACKS
                         </Text>
@@ -97,7 +101,7 @@ class MySkills extends PureComponent {
                         </LogoBox>
                     </LogoGrid>
                 </Grid>
-            </div>
+            </Container>
         )
     }
 }

@@ -16,13 +16,16 @@ const RawIcon = styled.i`
     height: ${({ size }) => size || '32px'};  
     color: ${({ color, theme }) => color || theme.textColor };
     &:hover {
-        transform: scale(1.5);
+        ${ ({ animate }) => (animate === false) ? '' : 'transform: scale(1.5);'}
         animation: ${
-            ({ color, theme }) => (
-                color
-                ?  getPulsateRipple(color)
-                : getPulsateRipple(theme.textColor)
-            )
+            ({ color, theme, animate }) => {
+                if (animate === false) return;
+                else return (
+                    color
+                    ?  getPulsateRipple(color)
+                    : getPulsateRipple(theme.textColor)
+                )
+            }
         } 1.3s 1;
     }
 `

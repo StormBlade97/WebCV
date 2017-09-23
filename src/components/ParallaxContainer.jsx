@@ -20,13 +20,14 @@ const ParallaxContainer = styled.div`
     height: 100vh;
     overflow-x: hidden;
     overflow-y: auto;
+    width: 100vw;
 `
 const Group = styled.div`
     position: relative;
     height: ${props => props.height || '100vh'};
 `
 export const ParallaxGroup = props => (
-    <Group height={props.height}>
+    <Group {...props} height={props.height}>
         <BackLayer>{props.backLayer}</BackLayer>
         <BaseLayer>{props.children}</BaseLayer>
     </Group>

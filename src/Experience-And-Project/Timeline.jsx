@@ -7,6 +7,7 @@ import AccurateIcon from './static/AccurateIcon'
 import BabyIcon from './static/BabyIcon'
 import BallGame from './static/BallGame'
 import TravellerIcon from './static/TravellerIcon'
+import Grid from 'material-ui/Grid'
 
 const workExperience = [
     {
@@ -58,23 +59,30 @@ const projects = [
     }
 ]
 
-const Wrapper = styled.div`
-    display: flex;
-    justify-content: center;
-    padding-left: 150px;
-    overflow: hidden;  
+const Wrapper = styled(Grid)`
+    display: flex !important;
+    justify-content: center !important;
+    margin: 0 !important;
+    width: 100% !important;
 `
-const ContentBox = styled.div`
-    max-width: 800px;
+const ContentBox = styled(Grid)`
+    justify-content: center !important;
 `
+const ResponsiveText = styled(Text)`
+    @media only screen and (max-width: 768px) {
+        font-size: 0.9rem;
+        font-weight: 400;
+    }
+`
+
 class Timeline extends PureComponent {
     state = { active: null }
     handleChangeIndex = index => this.setState({ active: index })
     getData = () => workExperience
     render() {
         return (
-            <Wrapper>
-                <ContentBox>
+            <Wrapper container>
+                <ContentBox item sm={12} md={10} lg={8} xs={10}>
                 {
                     this.getData().map((project, key) => (
                         <Panel
@@ -87,7 +95,7 @@ class Timeline extends PureComponent {
                             tags={project.skillset}
                             timestamp={project.timestamp}
                         >
-                            <Text light>{project.content}</Text>
+                            <ResponsiveText light>{project.content}</ResponsiveText>
                         </Panel>
                     ))
                 }

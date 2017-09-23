@@ -11,11 +11,17 @@ const FullSizeWrapper = styled.div`
     padding-left: 40px;
     border-left: 1px white solid;
     position: relative;
-    transition: width 0.7s ease;    
+    transition: width 0.7s ease;  
+    
+    @media only screen and (max-width: 768px) {
+        padding-left: 12px;
+        padding-right: 12px;
+        border-left: none;
+      }
 `
 const CollapsibleWrapper = styled.div`
     transition: all 0.7s ease;
-    max-height: ${props => props.open ? '500px' : '0px'};
+    max-height: ${props => props.open ? '700px' : '0px'};
     overflow: hidden;
 `
 const Body = styled.div`
@@ -38,6 +44,7 @@ const HeaderWrapper = styled(ButtonBase)`
     justify-content: flex-start !important;
     width: 100% !important;
     transition: background-color 0.3s ease !important;
+
     &:hover {
         background-color: rgba(255, 255, 255, 0.3) !important;
     }
@@ -56,6 +63,10 @@ const HeaderWrapper = styled(ButtonBase)`
         animation-duration: 2s;
         animation-iteration-count: infinite;
         background-color: ${({ active }) => active ? 'white' : grey[900]};
+
+        @media only screen and (max-width: 768px) {
+            display: none !important;
+        }
     }
 `
 const HeaderIcon = styled.div`
@@ -65,6 +76,7 @@ const HeaderLabel = styled.div`
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
+
 `
 const SkillTag = styled(Text)`
     padding: 5px;
@@ -92,6 +104,7 @@ const SkillTag = styled(Text)`
             border-color: ${({ theme }) => theme.primary };
         }
     }
+    
 `
 
 const AnchorRoot = styled.div`
@@ -99,6 +112,7 @@ const AnchorRoot = styled.div`
     position: absolute;
     left: 0;
     transform: translate3d(calc(-100% - 56px), 0, 0);
+    padding-right: 12px;    
 `
 const Timestamp = props => (
     <AnchorRoot>
@@ -107,12 +121,12 @@ const Timestamp = props => (
 )
 export const Header = props => (
     <HeaderWrapper onClick={props.onClick} disabled={!props.onClick} active={props.open} hasDot={props.hasDot} fullWidth>
-        { props.hasDot && <Timestamp>{props.timestamp}</Timestamp> }
         { props.leftIcon && <HeaderIcon> {props.leftIcon} </HeaderIcon>}
         <HeaderLabel>
             <Text style={{ textAlign: 'left' }} medium fontSize={"20px"} color={props.headerColor}>{ props.title }</Text>
             <Text style={{ textAlign: 'left' }} normal light color={props.headerColor} fontSize={"14px"}>{ props.subtitle }</Text>
         </HeaderLabel>
+        { props.hasDot && <Timestamp>{props.timestamp}</Timestamp> }        
     </HeaderWrapper>
 )
 const Panel = props => (

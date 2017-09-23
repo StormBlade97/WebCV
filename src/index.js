@@ -13,33 +13,20 @@ import * as colors from 'material-ui/colors';
 
 const styledTheme = {
     primary: '#FF9800',
-    textColor: 'rgba(255, 255, 255, 0.86)'
+    textColor: 'rgba(255, 255, 255, 0.86)',
+    maxWidth: '1600px'
 }
 const theme = createMuiTheme({
     palette: {
         primary: colors.orange,
-        secondary: colors.grey
     },
-    type: "dark",
     typography: {
         fontFamily: 'Open-sans',
     },
     overrides: {
-        MuiGrid: {
-            typeContainer: {
-                borderRadius: '4px'
-            }
-        },
         MuiTab: {
-            root: {
-                transition: 'all 0.5s ease'
-            },
             rootPrimary: {
-                color: 'rgba(255,255,255, 0.5)',
-            },
-            rootPrimarySelected: {
-                fontWeight: '800',
-                letterSpacing: '1px',
+                color: "white"
             }
         }
     }

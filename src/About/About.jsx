@@ -8,6 +8,10 @@ import * as colors from 'material-ui/colors'
 const imagesReq = require.context('./static', false, /^.*\.*$/)
 const images = imagesReq.keys().map(imagesReq);
 
+const Container = styled.div`
+    max-width: ${props => props.theme.maxWidth};
+`
+
 const GreyContainer = styled(Grid)`
     background-color: ${colors.grey[300]};
     width: 100%;
@@ -34,6 +38,7 @@ const Indicator = styled(CarouselIndicator)`
     bottom: 12px;
     width: 100%;
 `
+
 class About extends React.PureComponent {
     state = {
         reasons: [
@@ -45,7 +50,7 @@ class About extends React.PureComponent {
     }
     render() {
         return (
-            <div>
+            <Container>
                 <Header
                     style={{ marginBottom: '46px' }}
                     main={"A LITTLE BIT "}
@@ -53,7 +58,7 @@ class About extends React.PureComponent {
                     subtitle={"Reasons why you should consider me in your next project"}
                 />
                 <GreyContainer container>
-                    <TextBox style={{ padding: 24 }} item sm={5} xs={12}>
+                    <TextBox style={{ padding: 24 }} item sm={12} md={4} xs={12}>
                         <StrongText style={{ marginBottom: 16 }} color={colors.grey[800]}>SUMMARY</StrongText>
                         <ExpandedText justify normal color={colors.grey[800]}>
                             I am an apt, disciplined and inquisitive front-end developer.
@@ -63,15 +68,15 @@ class About extends React.PureComponent {
                             My short term for the end of 2017 is to transform to a fullstack developer. Currently working on ExpressJS. I am also interested in making progressive web apps, and port apps to desktop via Electron.
                         </ExpandedText>
                     </TextBox>
-                    <CarouselGrid style={{ padding: 24, paddingBottom: 28, position: 'relative' }} item sm={7} xs={12}>
+                    <CarouselGrid style={{ padding: 24, paddingBottom: 28, position: 'relative' }} item sm={12} xs={12} md={8}>
                         <Grid style={{ minHeight: '100%' }} container>
-                            <TextBox item md={6} sm={12} xs={12}>
+                            <TextBox item lg={6} sm={12} xs={12}>
                                 <ExpandedText fontSize={'1.2rem'} style={{ marginBottom: 16 }} medium >REASON #{this.state.index +1} WHY YOU SHOULD CHOOSE ME</ExpandedText>
                                 <ExpandedText justify light normal>
                                    {this.state.reasons[this.state.index]}
                                 </ExpandedText>
                             </TextBox>
-                            <Grid style={{ minHeight: '30vh' }} item md={6} sm={12} xs={12}>
+                            <Grid style={{ minHeight: '30vh' }} item lg={6} sm={12} xs={12}>
                                 <Picture imgSrc={images[0]} />
                             </Grid>
                         </Grid>
@@ -80,7 +85,7 @@ class About extends React.PureComponent {
                         }/>                        
                     </CarouselGrid>
                 </GreyContainer>
-            </div>
+            </Container>
         );
     }
 }
