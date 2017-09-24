@@ -1,8 +1,8 @@
-import React, { cloneElement } from 'react'
-import styled from 'styled-components'
-import Text from './Text'
-import { grey } from 'material-ui/colors'
-import { getPulsateRipple } from '../utils'
+import React from 'react';
+import styled from 'styled-components';
+import Text from './Text';
+import { grey } from 'material-ui/colors';
+import { getPulsateRipple } from '../utils';
 import ButtonBase from 'material-ui/ButtonBase';
 
 // styled-components
@@ -11,28 +11,28 @@ const FullSizeWrapper = styled.div`
     padding-left: 40px;
     border-left: 1px white solid;
     position: relative;
-    transition: width 0.7s ease;  
-    
+    transition: width 0.7s ease;
+
     @media only screen and (max-width: 768px) {
         padding-left: 12px;
         padding-right: 12px;
         border-left: none;
-      }
-`
+    }
+`;
 const CollapsibleWrapper = styled.div`
     transition: all 0.7s ease;
-    max-height: ${props => props.open ? '700px' : '0px'};
+    max-height: ${props => (props.open ? '700px' : '0px')};
     overflow: hidden;
-`
+`;
 const Body = styled.div`
     width: 100%;
     margin-bottom: 12px;
-`
+`;
 const Footer = styled.div`
     width: 100%;
     display: flex;
     flex-flow: row wrap;
-`
+`;
 const HeaderWrapper = styled(ButtonBase)`
     cursor: pointer !important;
     display: flex !important;
@@ -50,8 +50,8 @@ const HeaderWrapper = styled(ButtonBase)`
     }
     &::after {
         display: ${props => (props.hasDot ? 'block' : 'none')};
-        transition: 0.7s ease;        
-        content: "";
+        transition: 0.7s ease;
+        content: '';
         position: absolute;
         transform: translateX(calc(-55% - 40px));
         left: 0;
@@ -59,25 +59,22 @@ const HeaderWrapper = styled(ButtonBase)`
         height: 12px;
         border-radius: 50%;
         border: 1px white solid;
-        animation-name: ${props => props.active && getPulsateRipple("white")};
+        animation-name: ${props => props.active && getPulsateRipple('white')};
         animation-duration: 2s;
         animation-iteration-count: infinite;
-        background-color: ${({ active }) => active ? 'white' : grey[900]};
+        background-color: ${({ active }) => (active ? 'white' : grey[900])};
 
         @media only screen and (max-width: 768px) {
             display: none !important;
         }
     }
-`
-const HeaderIcon = styled.div`
-    margin-right: 12px;
-`
+`;
+const HeaderIcon = styled.div`margin-right: 12px;`;
 const HeaderLabel = styled.div`
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-
-`
+`;
 const SkillTag = styled(Text)`
     padding: 5px;
     margin-right: 12px;
@@ -88,47 +85,52 @@ const SkillTag = styled(Text)`
     white-space: nowrap;
     &::after {
         transition: all 0.3s ease;
-        position: absolute;      
-        content: "";
+        position: absolute;
+        content: '';
         left: 0;
         top: 0;
         width: 0%;
         height: 100%;
         z-index: 3;
-        border-bottom: 2px transparent solid;        
+        border-bottom: 2px transparent solid;
     }
     &:hover {
         letter-spacing: 2px;
         &::after {
             width: 100%;
-            border-color: ${({ theme }) => theme.primary };
+            border-color: ${({ theme }) => theme.primary};
         }
     }
-    
-`
+`;
 
 const AnchorRoot = styled.div`
     align-self: center;
     position: absolute;
     left: 0;
     transform: translate3d(calc(-100% - 56px), 0, 0);
-    padding-right: 12px;    
-`
+    padding-right: 12px;
+`;
 const Timestamp = props => (
     <AnchorRoot>
-        <Text light fontSize={'14px'} style={{ marginRight: 8 }}>{props.children}</Text>
+        <Text light fontSize={'14px'} style={{ marginRight: 8 }}>
+            {props.children}
+        </Text>
     </AnchorRoot>
-)
+);
 export const Header = props => (
     <HeaderWrapper onClick={props.onClick} active={props.open} hasDot={props.hasDot} fullWidth {...props}>
-        { props.leftIcon && <HeaderIcon> {props.leftIcon} </HeaderIcon>}
+        {props.leftIcon && <HeaderIcon> {props.leftIcon} </HeaderIcon>}
         <HeaderLabel>
-            <Text style={{ textAlign: 'left' }} medium fontSize={"20px"} color={props.headerColor}>{ props.title }</Text>
-            <Text style={{ textAlign: 'left' }} normal light color={props.headerColor} fontSize={"14px"}>{ props.subtitle }</Text>
+            <Text style={{ textAlign: 'left' }} medium fontSize={'20px'} color={props.headerColor}>
+                {props.title}
+            </Text>
+            <Text style={{ textAlign: 'left' }} normal light color={props.headerColor} fontSize={'14px'}>
+                {props.subtitle}
+            </Text>
         </HeaderLabel>
-        { props.hasDot && <Timestamp>{props.timestamp}</Timestamp> }        
+        {props.hasDot && <Timestamp>{props.timestamp}</Timestamp>}
     </HeaderWrapper>
-)
+);
 const Panel = props => (
     <FullSizeWrapper>
         <Header
@@ -138,20 +140,22 @@ const Panel = props => (
             title={props.title}
             subtitle={props.subtitle}
             open={props.open}
-            timestamp={props.timestamp} 
-            headerColor={props.headerColor || "white"}          
+            timestamp={props.timestamp}
+            headerColor={props.headerColor || 'white'}
         />
         <CollapsibleWrapper open={props.open}>
-            <Body>
-                { props.children }
-            </Body>
+            <Body>{props.children}</Body>
             <Footer>
-            {
-                props.open && props.tags && props.tags.map((tag, index) => (<SkillTag key={`tag-${index}`} bold fontSize={'14px'}>#{tag}</SkillTag>))
-            }
+                {props.open &&
+                    props.tags &&
+                    props.tags.map((tag, index) => (
+                        <SkillTag key={`tag-${index}`} bold fontSize={'14px'}>
+                            #{tag}
+                        </SkillTag>
+                    ))}
             </Footer>
         </CollapsibleWrapper>
     </FullSizeWrapper>
-)
+);
 
-export default Panel
+export default Panel;

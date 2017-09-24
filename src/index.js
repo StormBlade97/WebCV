@@ -6,16 +6,19 @@ import './static/devicon-colors.css';
 import './static/devicon.min.css';
 import 'animate.css/animate.min.css';
 import App from './App';
+import BallGame from './BallGame/BallGame';
 import registerServiceWorker from './registerServiceWorker';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
 import { ThemeProvider } from 'styled-components';
 import * as colors from 'material-ui/colors';
 
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 const styledTheme = {
     primary: '#FF9800',
     textColor: 'rgba(255, 255, 255, 0.86)',
-    maxWidth: '1600px'
-}
+    maxWidth: '1600px',
+};
 const theme = createMuiTheme({
     palette: {
         primary: colors.orange,
@@ -26,18 +29,23 @@ const theme = createMuiTheme({
     overrides: {
         MuiTab: {
             rootPrimary: {
-                color: "white"
-            }
-        }
-    }
+                color: 'white',
+            },
+        },
+    },
 });
 
 const Root = () => (
-   <MuiThemeProvider theme={theme}>
-       <ThemeProvider theme={styledTheme}>
-            <App />
-       </ThemeProvider>
-   </MuiThemeProvider>
-)
+    <MuiThemeProvider theme={theme}>
+        <ThemeProvider theme={styledTheme}>
+            <Router>
+                <div>
+                    <Route exact path="/" component={App} />
+                    <Route path="/game" component={BallGame} />
+                </div>
+            </Router>
+        </ThemeProvider>
+    </MuiThemeProvider>
+);
 ReactDOM.render(<Root />, document.getElementById('root'));
 registerServiceWorker();

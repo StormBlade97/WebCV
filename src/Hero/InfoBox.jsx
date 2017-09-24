@@ -1,9 +1,9 @@
-import React from 'react'
-import Button from 'material-ui/Button'
-import * as colors from 'material-ui/colors'
-import Text from '../components/Text'
-import styled from 'styled-components'
-import Icon from '../components/Icon'
+import React from 'react';
+import Button from 'material-ui/Button';
+import Text from '../components/Text';
+import styled from 'styled-components';
+import Icon from '../components/Icon';
+import CV from '../static/CV2017-TN.pdf';
 
 const VAlignWrapper = styled.div`
     display: flex;
@@ -16,14 +16,12 @@ const VAlignWrapper = styled.div`
         align-items: center;
         justify-content: space-around;
     }
-    
-`
+`;
 const TextBox = styled.div`
     display: inherit;
     flex-direction: column;
     justify-content: center;
-
-`
+`;
 const Headlines = styled(Text)`
     font-size: 4rem;
     color: ${props => props.color || props.theme.primary};
@@ -34,7 +32,7 @@ const Headlines = styled(Text)`
     @media only screen and (max-width: 768px) {
         font-size: 2rem;
     }
-`
+`;
 const JobTitle = styled(Text)`
     font-size: 1.8rem;
     color: ${props => props.theme.textColor};
@@ -47,13 +45,12 @@ const JobTitle = styled(Text)`
     @media only screen and (max-width: 768px) {
         font-size: 1rem;
         margin-bottom: 30px;
-    
     }
-`
+`;
 const HeadlineBlock = styled.div`
     display: flex;
     flex-direction: column;
-`
+`;
 const ReadMoreButton = styled(Button)`
     background-color: ${props => props.theme.primary} !important;
     color: ${props => props.theme.textColor} !important;
@@ -64,14 +61,14 @@ const ReadMoreButton = styled(Button)`
     padding-top: 1rem !important;
     padding-bottom: 1rem !important;
     text-align: center;
-    
+
     @media only screen and (max-width: 1200px) {
         font-size: 0.8rem !important;
         padding-top: 0.3rem !important;
         padding-bottom: 0.3rem !important;
         width: 10rem !important;
     }
-`
+`;
 const InfoBox = props => (
     <VAlignWrapper>
         <TextBox>
@@ -83,8 +80,18 @@ const InfoBox = props => (
             </HeadlineBlock>
             <JobTitle light>Front-End Developer in Helsinki, Finland</JobTitle>
         </TextBox>
-        <ReadMoreButton href="file:%PUBLIC_URL%/CV2017-TN.pdf" download raised >{<Icon size={'0.8rem'} animate={false} iconClassName={"fa fa-download"} style={{ margin: 0, padding: 0 }}></Icon>}  Paper CV</ReadMoreButton>
+        <ReadMoreButton href={`${CV}`} download raised>
+            {
+                <Icon
+                    size={'0.8rem'}
+                    animate={false}
+                    iconClassName={'fa fa-download'}
+                    style={{ margin: 0, padding: 0 }}
+                />
+            }{' '}
+            Paper CV
+        </ReadMoreButton>
     </VAlignWrapper>
-)
+);
 
 export default InfoBox;
