@@ -1,37 +1,38 @@
 {
-  "name": "client",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "animate.css": "^3.5.2",
-    "bootstrap": "^4.0.0-beta",
-    "lodash": "^4.17.4",
-    "material-ui": "^1.0.0-beta.8",
-    "materialize-css": "^0.100.2",
-    "prettier": "^1.7.0",
-    "react": "^15.6.1",
-    "react-dom": "^15.6.1",
-    "react-router": "^4.2.0",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "1.0.13",
-    "react-swipeable-views": "^0.12.8",
-    "serve": "^6.1.0",
-    "styled-components": "^2.1.2",
-    "tinycolor2": "^1.4.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "format": "node ./node_modules/.bin/prettier --write \"./src/**/*.{jsx,js,css,scss}\""
-  },
-  "prettier": {
-    "jsxBracketSameLine": true,
-    "printWidth": 120,
-    "singleQuote": true,
-    "tabWidth": 4,
-    "trailingComma": "es5",
-    "bracketSpacing": true
-  }
+    "name": "Thanh's home page",
+    "version": "0.1.0",
+    "private": true,
+    "homepage": "http://stormblade97.github.io/",
+    "dependencies": {
+        "animate.css": "^3.5.2",
+        "bootstrap": "^4.0.0-beta",
+        "lodash": "^4.17.4",
+        "material-ui": "^1.0.0-beta.8",
+        "materialize-css": "^0.100.2",
+        "prettier": "^1.7.0",
+        "react": "^15.6.1",
+        "react-dom": "^15.6.1",
+        "react-router": "^4.2.0",
+        "react-router-dom": "^4.2.2",
+        "react-scripts": "1.0.13",
+        "react-swipeable-views": "^0.12.8",
+        "serve": "^6.1.0",
+        "styled-components": "^2.1.2",
+        "tinycolor2": "^1.4.1"
+    },
+    "scripts": {
+        "start": "react-scripts start",
+        "build": "react-scripts build",
+        "test": "react-scripts test --env=jsdom",
+        "eject": "react-scripts eject",
+        "format": "node ./node_modules/.bin/prettier --write \"./src/**/*.{jsx,js,css,scss}\""
+    },
+    "prettier": {
+        "jsxBracketSameLine": true,
+        "printWidth": 120,
+        "singleQuote": true,
+        "tabWidth": 4,
+        "trailingComma": "es5",
+        "bracketSpacing": true
+    }
 }
