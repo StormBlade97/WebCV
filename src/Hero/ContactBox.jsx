@@ -10,7 +10,7 @@ const BottomFlexBox = styled.div`
     position: absolute;
     bottom: 12px;
     justify-content: center;
-    transition: all 0.3s ease;    
+    transition: all 0.3s ease;
 `
 const Icon = styled(RawIcon)`
     margin: 12px;

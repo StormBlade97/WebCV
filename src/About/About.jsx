@@ -42,7 +42,7 @@ const Indicator = styled(CarouselIndicator)`
 class About extends React.PureComponent {
     state = {
         reasons: [
-            "I am extremely handsome and is very capable. I can do a lot of things and if you name it i can do it. I am also charming and is a great inspiration at work. Work with me and you will wonder where all of that productivity suddenly come from.",
+            "I have a solid foundation and experience in application development. I can utilize my designer skills and deep understanding of modern Javascript (ES7), with my expertise in the React ecosystem, to deliver a feature packed, complex application while ensuring the best possible user experience. I also have auxiliary UI/UX design skills and have experience wireframing and prototyping using Adobe Experience Design and Illustrator. In addition, I am moving fast and at the moment implementing a project with MongoDB, Express, NodeJS, and GraphQL",
             "My expertise is exceptional, my beauty is eternal. Cooporate with me to see my skilled hand threading your performant, yet exquisite web application come to life. Your clients will never be happier looking at these world-class grades of beauty",
             "My cooperability is unquestioned. Never before have I heard that my work is non-understandable, nor my word is vulgar. My conversations are soothing, inspiring and educational. People read at my code immediately understands the scheme of where the beauty come from. Collegues working with me immediately understand why I am the best in the field. It's simply understandable."
         ],
@@ -61,11 +61,12 @@ class About extends React.PureComponent {
                     <TextBox style={{ padding: 24 }} item sm={12} md={4} xs={12}>
                         <StrongText style={{ marginBottom: 16 }} color={colors.grey[800]}>SUMMARY</StrongText>
                         <ExpandedText justify normal color={colors.grey[800]}>
-                            I am an apt, disciplined and inquisitive front-end developer.
-                            I focus mainly developing performant, maintainable, feature-rich web application using React tech stack. I am also capable of designing and implement modern, user friendly UI.
-                            I have strong on-hand experience and relevant
-                            formal education.
-                            My short term for the end of 2017 is to transform to a fullstack developer. Currently working on ExpressJS. I am also interested in making progressive web apps, and port apps to desktop via Electron.
+                        Front-End Developer experienced in React-Redux stack with UI design skills.
+                        I have experience in developing performant, maintainable, feature-rich web application using React tech stack. I am also capable of designing and implement modern, user friendly UI.<br/>
+
+                        I am actively working to transit to FullStack web developer using MongoDB, Koa, React, NodeJS and GraphQL.<br/>
+
+                        My latest projects are web-based data curation tool and upgrading my CV to 2017 standard.
                         </ExpandedText>
                     </TextBox>
                     <CarouselGrid style={{ padding: 24, paddingBottom: 28, position: 'relative' }} item sm={12} xs={12} md={8}>
@@ -77,7 +78,7 @@ class About extends React.PureComponent {
                                 </ExpandedText>
                             </TextBox>
                             <Grid style={{ minHeight: '30vh' }} item lg={6} sm={12} xs={12}>
-                                <Picture imgSrc={images[0]} />
+                                <Picture imgSrc={images[this.state.index]} />
                             </Grid>
                         </Grid>
                         <Indicator itemCount={this.state.reasons.length} current={this.state.index} onTouchTap={

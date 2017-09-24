@@ -40,7 +40,8 @@ const Background = styled.div`
     transform: translateY(-10%) scale(1.3);
 
     @media only screen and (max-width: 768px) {
-      background-position: left bottom;      
+      background-position: left bottom;
+      height: 80vh;         
     }
   }
 `

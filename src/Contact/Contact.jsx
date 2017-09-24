@@ -48,10 +48,10 @@ class Contact extends React.PureComponent {
                 <Text medium fontSize={"1.5rem"} color={darkColor}>Look for me out there</Text><br/>
                 <Text normal light color={darkColor}>Send me an email, give me a call, or connect with me if you are interested</Text>
                 <Grid container style={{ marginTop: 40 }}>
-                    <ImageBox item sm={7} hidden={{ xsDown: true }} justify={'flex-end'}>
+                    <ImageBox item sm={6} hidden={{ xsDown: true }} justify={'flex-end'}>
                         <Picture src={team}/>
                     </ImageBox>
-                    <Grid item sm={5} xs={12}>
+                    <Grid item sm={6} xs={12}>
                         {
                             contacts.map( (contact, key) => (
                                 <ListItem

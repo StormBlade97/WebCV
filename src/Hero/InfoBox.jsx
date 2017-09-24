@@ -82,7 +82,7 @@ const InfoBox = props => (
             </HeadlineBlock>
             <JobTitle light>Front-End Developer in Helsinki, Finland</JobTitle>
         </TextBox>
-        <ReadMoreButton raised >{<Icon size={'0.8rem'} animate={false} iconClassName={"fa fa-download"} style={{ margin: 0, padding: 0 }}></Icon>} PaperCV</ReadMoreButton>
+        <ReadMoreButton raised >{<Icon size={'0.8rem'} animate={false} iconClassName={"fa fa-download"} style={{ margin: 0, padding: 0 }}></Icon>}  Paper CV</ReadMoreButton>
     </VAlignWrapper>
 )
 

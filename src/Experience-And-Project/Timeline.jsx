@@ -82,7 +82,7 @@ class Timeline extends PureComponent {
     render() {
         return (
             <Wrapper container>
-                <ContentBox item sm={12} md={10} lg={8} xs={10}>
+                <ContentBox item sm={12} md={10} lg={6} xs={10}>
                 {
                     this.getData().map((project, key) => (
                         <Panel

@@ -19,7 +19,7 @@ const LogoBox = styled(IconBox)`
 `
 const LogoGrid = styled(Grid)`
     position: relative;
-    background: ${grey[900]};  /* fallback for old browsers */
+    background: ${grey[900]};
     border-radius: 1em 0 0 1em;
     padding: 24px !important;
     z-index: 2;
@@ -34,7 +34,7 @@ const LogoGrid = styled(Grid)`
         background-image: url('${atomIcon}');
         background-size: 30em;
         background-repeat: no-repeat;
-        background-position: 25em center;
+        background-position: right center;
         opacity: 0.5;
         z-index: -1;
     }
@@ -59,12 +59,11 @@ class MySkills extends PureComponent {
                 <Grid container style={{ minHeight: '400px' }}>
                     <TextBox item lg={5} md={12} sm={12} xs={12}>
                         <StrongText style={{ marginBottom: 16 }} color={colors.grey[800]}>
-                            I CAN BUILD PERFORMANT AND BEAUTIFUL WEB APP
+                            PERFORMANT WEB APPS WITH NICE USER INTERFACE
                         </StrongText>
                         <Text justify normal color={colors.grey[800]}>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged
+                            I have hands on experience designing and developing application of different scales. At my current company I helped prototyping and implementing a data curation tool. The tool is expected to handle very large data sets, usually around tens of thoudsands of rows and hundreds of columns, while allowing user to interact and manipulate the dataset in a spreadsheet way (with infinite grid), like Microsoft Excel. It's a huge engineering feat, and contrary to contemporary solution, it comes with Material Design. It is praised to be the company's flagship in terms of UI. <br/>
+                            Besides work experience, I also have a handful of school projects and own projects. You can check them out in the Experience section. 
                         </Text>
                     </TextBox>
                     <LogoGrid item lg={7} md={12} sm={12} xs={12} >
@@ -87,7 +86,7 @@ class MySkills extends PureComponent {
                             <Icon color={colors.orange["A200"]} type="illustrator" />
                         </LogoBox>
                         <Text>
-                            Technology I have been exposed, but not too versed in
+                            Exposed to
                         </Text>
                         <LogoBox>
                             <Icon color={colors.red["A200"]} type="cplusplus" />
