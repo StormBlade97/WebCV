@@ -8,6 +8,7 @@
     "lodash": "^4.17.4",
     "material-ui": "^1.0.0-beta.8",
     "materialize-css": "^0.100.2",
+    "prettier": "^1.7.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
     "react-scripts": "1.0.13",
@@ -20,6 +21,15 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "format": "node ./node_modules/.bin/prettier --require-pragma --write \"./src/**/*.{jsx,js,css,scss}\""
+  },
+  "prettier": {
+    "jsxBracketSameLine": true,
+    "printWidth": 120,
+    "singleQuote": true,
+    "tabWidth": 4,
+    "trailingComma": "es5",
+    "bracketSpacing": true
   }
 }

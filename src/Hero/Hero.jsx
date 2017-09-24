@@ -32,7 +32,7 @@ const Background = styled(Paper)`
         left: 0;
         right: 0;
         z-index: -1;
-        background-color: rgba(0,0,0, .8) !important;
+        background-color: rgba(255,152,0, .8) !important;
         background-image: url(${backgroundImg});
         background-size: contain;
         background-repeat: no-repeat;

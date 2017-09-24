@@ -35,7 +35,7 @@ const LogoGrid = styled(Grid)`
         background-size: 30em;
         background-repeat: no-repeat;
         background-position: right center;
-        opacity: 0.5;
+        opacity: 0.3;
         z-index: -1;
     }
 `

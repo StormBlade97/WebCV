@@ -37,7 +37,7 @@ class ExperienceNProject extends PureComponent {
                     <Tab label="Work experience" />
                     <Tab label="Projects" />
                 </TabsContainer>
-                <SwipeableContainer index={this.state.index} onChangeIndex={this.handleChangeIndex}>
+                <SwipeableContainer resistance index={this.state.index} onChangeIndex={this.handleChangeIndex}>
                     <Timeline />
                     <ProjectTimeline />
                 </SwipeableContainer>

@@ -5,6 +5,8 @@ import Text, { ExpandedText, StrongText } from '../components/Text'
 import CarouselIndicator from './Carousel'
 import styled from 'styled-components'
 import * as colors from 'material-ui/colors'
+import SwipeableViews from 'react-swipeable-views'
+
 const imagesReq = require.context('./static', false, /^.*\.*$/)
 const images = imagesReq.keys().map(imagesReq);
 
@@ -16,10 +18,7 @@ const GreyContainer = styled(Grid)`
     background-color: ${colors.grey[300]};
     width: 100%;
 `
-const TextBox = styled(Grid)`
-    display: flex;
-    flex-direction: column;
-`
+
 const CarouselGrid = styled(Grid)`
     background-color: ${colors.grey[900]};
     flex-direction: row;
@@ -28,6 +27,7 @@ const CarouselGrid = styled(Grid)`
 const Picture = styled.div`
     width: 100%;
     height: 100%;
+    min-height: 300px;
     background-image: url("${({imgSrc}) => imgSrc}") !important;
     background-size: cover;
     background-position: center center;
@@ -38,16 +38,33 @@ const Indicator = styled(CarouselIndicator)`
     bottom: 12px;
     width: 100%;
 `
-
+const TextBox = styled(Grid)`
+    display: flex;
+    flex-direction: column;
+`
+const reasons = [
+    {
+        content: `(Good) practice makes perfect. By now, I have had a fair participation in various software projects, including working experience (with a very demanding project).
+        Throughout my participation, I have gathered many skills, not only on the coding part, but also on teamwork, development principle, and business strategy. Tech-wise I have had considerable experience in developing User Interface of web apps with React and its renounced state container: Redux, as well as some designing and prototyping using Adobe XD and Illustrator.
+        There are many additional techniques I accquired in the proccess, mostly in advanced CSS effects and data-flow management for tricky features.
+        I practised Agile development, help conducted User Testing, and wrote documentations.
+        In addition, I am moving fast and at the moment implementing a project with MongoDB, Express, NodeJS, and GraphQL.`,
+        header: "Experience"
+    },
+    {
+        content: "Understanding that \"No body build software alone\", I strongly value team work. I have been key contributor in many projects, either in school projects or working ones and I continually exceed expectation as I strive to better myself. My teams hold me in high regards for my passion, innovative ideas and resourcefulness. I am also praised on being disciplined with respect to best practise and technology patterns, and meticulous in details. I believe that, fundamentally, I will be great in any team as I have an open mindset, excellent communication skill, and a motivation to better myself. Practically, I have experience in using collaborative tools. Some of them are Trello, Assembla (for ticket managing), Git (as Software Version Control), and Slack for communication.",
+        header: "Collaborative mindset"
+    },
+    {
+        content: "Software engineering is not something that people can just do as work, as in a sense of chores. My world view on Software Engineering is that it is allows us to solve complex problems, and that software engineering is problem-solving itself. I believe that, to be successful in this carrier, one must have passion, strong motivation, and self-discipline in problem-solving. I consider myself inquisitive, innovative, discipline and attentive to details, which will certainly be a solid foundation in making me a great software engineerer (a problem-solver). I have also received the same feedback from people I have collaborated with, and I believe I will continue to be a great contributor to even bigger, more impactful projects.",
+        header: "Good traits"
+    }
+]
 class About extends React.PureComponent {
     state = {
-        reasons: [
-            "I have a solid foundation and experience in application development. I can utilize my designer skills and deep understanding of modern Javascript (ES7), with my expertise in the React ecosystem, to deliver a feature packed, complex application while ensuring the best possible user experience. I also have auxiliary UI/UX design skills and have experience wireframing and prototyping using Adobe Experience Design and Illustrator. In addition, I am moving fast and at the moment implementing a project with MongoDB, Express, NodeJS, and GraphQL",
-            "My expertise is exceptional, my beauty is eternal. Cooporate with me to see my skilled hand threading your performant, yet exquisite web application come to life. Your clients will never be happier looking at these world-class grades of beauty",
-            "My cooperability is unquestioned. Never before have I heard that my work is non-understandable, nor my word is vulgar. My conversations are soothing, inspiring and educational. People read at my code immediately understands the scheme of where the beauty come from. Collegues working with me immediately understand why I am the best in the field. It's simply understandable."
-        ],
-        index: 0
+        index: 0,
     }
+
     render() {
         return (
             <Container>
@@ -70,18 +87,26 @@ class About extends React.PureComponent {
                         </ExpandedText>
                     </TextBox>
                     <CarouselGrid style={{ padding: 24, paddingBottom: 28, position: 'relative' }} item sm={12} xs={12} md={8}>
-                        <Grid style={{ minHeight: '100%' }} container>
-                            <TextBox item lg={6} sm={12} xs={12}>
-                                <ExpandedText fontSize={'1.2rem'} style={{ marginBottom: 16 }} medium >REASON #{this.state.index +1} WHY YOU SHOULD CHOOSE ME</ExpandedText>
-                                <ExpandedText justify light normal>
-                                   {this.state.reasons[this.state.index]}
-                                </ExpandedText>
-                            </TextBox>
-                            <Grid style={{ minHeight: '30vh' }} item lg={6} sm={12} xs={12}>
-                                <Picture imgSrc={images[this.state.index]} />
-                            </Grid>
-                        </Grid>
-                        <Indicator itemCount={this.state.reasons.length} current={this.state.index} onTouchTap={
+                        <SwipeableViews animateHeight enableMouseEvents onChangeIndex={index => this.setState({ index })} index={this.state.index}>
+                            {
+                                reasons.map((reason, index) => (
+                                    <Grid key={index} container>
+                                        <TextBox item lg={6} sm={12} xs={12}>
+                                            <ExpandedText fontSize={'1.2rem'} style={{ marginBottom: 16 }} medium >I HAVE <ExpandedText fontSize={'1.2rem'} style={{ textTransform: 'uppercase' }} primary>
+                                                {reason.header}
+                                            </ExpandedText>
+                                            </ExpandedText>
+                                            <ExpandedText justify light normal>
+                                            {reason.content}
+                                            </ExpandedText>
+                                        </TextBox>
+                                        <Grid style={{ minHeight: '30vh' }} item lg={6} sm={12} xs={12}>
+                                            <Picture imgSrc={images[index]} />
+                                        </Grid>
+                                </Grid>))
+                            }
+                        </SwipeableViews>
+                        <Indicator itemCount={reasons.length} current={this.state.index} onTouchTap={
                             index => this.setState({ index })
                         }/>                        
                     </CarouselGrid>

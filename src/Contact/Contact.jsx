@@ -14,21 +14,25 @@ const contacts = [
         medium: "phone",
         title: "Phone",
         subtitle: "0465947537",
+        link: 'tel:0465947537'
     },
     {
         medium: "envelope",
         title: "Email",
-        subtitle: "nguyendaithanh0612@gmail.com"
+        subtitle: "nguyendaithanh0612@gmail.com",
+        link: 'mailto:nguyendaithanh0612@gmail.com?subject=Hello%20Thanh'        
     },
     {
         medium: "github",
         title: "Github",
         subtitle: "https://github.com/StormBlade97",
+        link: 'https://github.com/StormBlade97'
     },
     {
         medium: "linkedin",
         title: "LinkedIn",
         subtitle: "https://www.linkedin.com/in/thanhng-97/",
+        link: "https://www.linkedin.com/in/thanhng-97/",
     }
 ]
 const ImageBox = styled(Grid)`
@@ -57,9 +61,11 @@ class Contact extends React.PureComponent {
                                 <ListItem
                                     headerColor={darkColor}
                                     key={key}
-                                    leftIcon={<Icon color={darkColor} iconClassName={`fa fa-${contact.medium}`}/>}
+                                    leftIcon={<Icon animate={false} color={darkColor} iconClassName={`fa fa-${contact.medium}`}/>}
                                     title={contact.title}
                                     subtitle={contact.subtitle}
+                                    href={contact.link}
+                                    target="_blank"
                                 />
                             ))
                         }

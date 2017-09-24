@@ -18,8 +18,9 @@ const Icon = styled(RawIcon)`
 const ContactBox = props => (
     <BottomFlexBox>
         <Icon href={'https://github.com/StormBlade97'} iconClassName={`fa fa-github`} />
-        <Icon href='#' iconClassName={`fa fa-phone`}/>
+        <Icon href='tel:0465947537"' iconClassName={`fa fa-phone`}/>
         <Icon href={'https://www.linkedin.com/in/thanhng-97/'} iconClassName={`fa fa-linkedin`} />
+        <Icon href={'mailto:nguyendaithanh0612@gmail.com'} iconClassName={`fa fa-envelope`} />
     </BottomFlexBox>
 )
 export default ContactBox

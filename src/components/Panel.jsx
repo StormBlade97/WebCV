@@ -120,7 +120,7 @@ const Timestamp = props => (
     </AnchorRoot>
 )
 export const Header = props => (
-    <HeaderWrapper onClick={props.onClick} disabled={!props.onClick} active={props.open} hasDot={props.hasDot} fullWidth>
+    <HeaderWrapper onClick={props.onClick} active={props.open} hasDot={props.hasDot} fullWidth {...props}>
         { props.leftIcon && <HeaderIcon> {props.leftIcon} </HeaderIcon>}
         <HeaderLabel>
             <Text style={{ textAlign: 'left' }} medium fontSize={"20px"} color={props.headerColor}>{ props.title }</Text>

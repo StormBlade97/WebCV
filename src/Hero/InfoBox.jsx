@@ -63,7 +63,8 @@ const ReadMoreButton = styled(Button)`
     border-radius: 2em !important;
     padding-top: 1rem !important;
     padding-bottom: 1rem !important;
-
+    text-align: center;
+    
     @media only screen and (max-width: 1200px) {
         font-size: 0.8rem !important;
         padding-top: 0.3rem !important;
@@ -82,7 +83,7 @@ const InfoBox = props => (
             </HeadlineBlock>
             <JobTitle light>Front-End Developer in Helsinki, Finland</JobTitle>
         </TextBox>
-        <ReadMoreButton raised >{<Icon size={'0.8rem'} animate={false} iconClassName={"fa fa-download"} style={{ margin: 0, padding: 0 }}></Icon>}  Paper CV</ReadMoreButton>
+        <ReadMoreButton href="file:%PUBLIC_URL%/CV2017-TN.pdf" download raised >{<Icon size={'0.8rem'} animate={false} iconClassName={"fa fa-download"} style={{ margin: 0, padding: 0 }}></Icon>}  Paper CV</ReadMoreButton>
     </VAlignWrapper>
 )
 
