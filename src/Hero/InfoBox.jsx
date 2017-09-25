@@ -3,7 +3,7 @@ import Button from 'material-ui/Button';
 import Text from '../components/Text';
 import styled from 'styled-components';
 import Icon from '../components/Icon';
-import CV from '../static/CV2017-TN.pdf';
+import CV from '../static/CV2017-ThanhNguyen.pdf';
 
 const VAlignWrapper = styled.div`
     display: flex;

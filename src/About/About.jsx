@@ -82,8 +82,8 @@ class About extends React.PureComponent {
                         <ExpandedText justify normal color={colors.grey[800]}>
                             Front-End Developer experienced in React-Redux stack with UI design skills. I have
                             experience in developing performant, maintainable, feature-rich web application using React
-                            tech stack. I am also capable of designing and implement modern, user friendly UI.<br />
-                            I am actively working to transit to FullStack web developer using MongoDB, Koa, React,
+                            tech stack. I am also capable of designing and implementing modern, user friendly UI.<br />
+                            I am actively working to transit to Full-Stack web developer using MongoDB, Koa, React,
                             NodeJS and GraphQL.<br />
                             My latest projects are web-based data curation tool and upgrading my CV to 2017 standard.
                         </ExpandedText>

@@ -1,5 +1,5 @@
 {
-    "name": "Thanh's home page",
+    "name": "Homepage",
     "version": "0.1.0",
     "private": true,
     "homepage": "http://stormblade97.github.io/",
@@ -25,7 +25,9 @@
         "build": "react-scripts build",
         "test": "react-scripts test --env=jsdom",
         "eject": "react-scripts eject",
-        "format": "node ./node_modules/.bin/prettier --write \"./src/**/*.{jsx,js,css,scss}\""
+        "format": "node ./node_modules/.bin/prettier --write \"./src/**/*.{jsx,js,css,scss}\"",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build"
     },
     "prettier": {
         "jsxBracketSameLine": true,
@@ -34,5 +36,8 @@
         "tabWidth": 4,
         "trailingComma": "es5",
         "bracketSpacing": true
+    },
+    "devDependencies": {
+        "gh-pages": "^1.0.0"
     }
 }
