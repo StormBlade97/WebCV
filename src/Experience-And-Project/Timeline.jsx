@@ -1,15 +1,37 @@
 import React, { PureComponent } from 'react';
 import styled from 'styled-components';
 import { ExpandedText as Text } from '../components/Text';
+import Avatar from 'material-ui/Avatar';
 import Panel from '../components/Panel';
 import AccurateIcon from './static/AccurateIcon';
 import BabyIcon from './static/BabyIcon';
 import BallGame from './static/BallGame';
 import TravellerIcon from './static/TravellerIcon';
+import ChatAppIcon from './static/ChatApp.ico';
 import Grid from 'material-ui/Grid';
 import { Link } from 'react-router-dom';
 
 const workExperience = [
+    {
+        title: 'Petsofi @Medisapiens',
+        subtitle: 'Front-End Developer, Designer',
+        timestamp: '10.2017 → Present',
+        skillset: [
+            'javascript',
+            'webapplication',
+            'react',
+            'redux',
+            'webpack',
+            'git',
+            'design',
+            'prototyping',
+            'styled-components',
+            'react-router',
+            'react-motion',
+            'optimistic update',
+        ],
+        content: `Design and develop the front-end of QuestionnaireBuilder for Petsofi, a social platform for pet owner.`,
+    },
     {
         title: 'Accurate @Medisapiens',
         leftIcon: <AccurateIcon size={'46px'} color={'rgb(255,64,129)'} />,
@@ -44,6 +66,38 @@ const workExperience = [
 ];
 
 const projects = [
+    {
+        title: 'Chat application',
+        timestamp: '26.10.2017 → 03.11.2017',
+        subtitle: 'Fullstack Developer, Designer',
+        leftIcon: <img src={ChatAppIcon} width="46px" />,
+        skillset: [
+            'react',
+            'redux',
+            'express',
+            'websocket',
+            'design',
+            'adobeXD',
+            'illustrator',
+            'material-ui',
+            'caching',
+            'dynamic theming',
+        ],
+        content: (
+            <Text light>
+                Designed the UI and implemented the frontend and some backend of a simple chat room application with
+                modern look and feel. The front end is built using the React/Redux and the backend is built using Node,
+                Express. The application was designed to be responsive and supports mobile devices. The application
+                features audial and haptic feedback, and can sustain network instability with service worker.{'\n'}
+                Check it out here:{' '}
+                <Text bold>
+                    <Link to="https://chatapp-thanhnguyen.herokuapp.com" target="_blank">
+                        here
+                    </Link>
+                </Text>
+            </Text>
+        ),
+    },
     {
         title: 'Lexis',
         timestamp: '09.2017 → Present',
