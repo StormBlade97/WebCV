@@ -44,7 +44,7 @@ class App extends Component {
                     <ExperienceNProject />
                 </Container>
 
-                <Container backgroundColor={colors.orange[500]}>
+                <Container backgroundColor={colors.blue[500]}>
                     <Contact />
                 </Container>
 

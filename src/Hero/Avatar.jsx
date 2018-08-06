@@ -1,7 +1,6 @@
 import React from 'react';
 import MuiAvatar from 'material-ui/Avatar';
 import styled from 'styled-components';
-import avatarUrl from './static/Profile.png';
 
 const Avatar = styled(MuiAvatar)`
     width: 100% !important;
@@ -19,6 +18,12 @@ const Avatar = styled(MuiAvatar)`
     }
 `;
 
-const MyAvatar = props => <Avatar {...props} src={avatarUrl} className={props.className} />;
+const MyAvatar = props => (
+    <Avatar
+        {...props}
+        src={'https://avatars1.githubusercontent.com/u/16608235?s=460&v=4'}
+        className={props.className}
+    />
+);
 
 export default MyAvatar;

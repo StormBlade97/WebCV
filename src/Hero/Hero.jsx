@@ -4,7 +4,7 @@ import MyAvatar from './Avatar';
 import styled from 'styled-components';
 import InfoBox from './InfoBox';
 import ContactBox from './ContactBox';
-import backgroundImg from './static/webconstruction.svg';
+import backgroundImg from './static/339378-PAY9WN-280.jpg';
 import Grid from 'material-ui/Grid';
 
 const Background = styled(Paper)`
@@ -32,7 +32,7 @@ const Background = styled(Paper)`
         z-index: -1;
         background-color: rgba(255, 152, 0, 0.8) !important;
         background-image: url(${backgroundImg});
-        background-size: contain;
+        background-size: cover;
         background-repeat: no-repeat;
         background-position: center center;
     }

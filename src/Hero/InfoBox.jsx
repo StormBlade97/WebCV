@@ -53,15 +53,13 @@ const HeadlineBlock = styled.div`
     margin-bottom: 1rem;
 `;
 const ReadMoreButton = styled(Button)`
-    &&& {
-        align-self: flex-start;
-        background-color: ${props => props.theme.primary};
-        color: ${props => props.theme.textColor};
-        font-family: 'Montserrat', sans-serif;
-        border-radius: 2em;
-        padding: 0.8rem 2rem;
-        text-align: center;
-    }
+    align-self: flex-start !important;
+    background-color: ${props => props.theme.primary} !important;
+    color: ${props => props.theme.textColor} !important;
+    font-family: 'Montserrat', sans-serif !important;
+    border-radius: 2em !important;
+    padding: 0.8rem 2rem;
+    text-align: center !important;
 
     @media only screen and (max-width: 1200px) {
         font-size: 0.8rem !important;
@@ -80,18 +78,18 @@ const InfoBox = props => (
                 <Headlines bold>Thanh Nguyen</Headlines>
             </HeadlineBlock>
             <JobTitle light>Front-End to Full-Stack Developer. UX Designer</JobTitle>
+            <ReadMoreButton href={`${CV}`} download raised>
+                {
+                    <Icon
+                        size={'0.8rem'}
+                        animate={false}
+                        iconClassName={'fa fa-download'}
+                        style={{ padding: 0, margin: '0 0.5rem 0 0' }}
+                    />
+                }
+                Paper CV
+            </ReadMoreButton>
         </TextBox>
-        <ReadMoreButton href={`${CV}`} download raised>
-            {
-                <Icon
-                    size={'0.8rem'}
-                    animate={false}
-                    iconClassName={'fa fa-download'}
-                    style={{ padding: 0, margin: '0 0.5rem 0 0' }}
-                />
-            }
-            Paper CV
-        </ReadMoreButton>
     </VAlignWrapper>
 );
 

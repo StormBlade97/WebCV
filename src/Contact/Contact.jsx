@@ -48,7 +48,7 @@ class Contact extends React.PureComponent {
     render() {
         return (
             <div style={{ alignSelf: 'flex-start', width: '100%', maxWidth: 1300, padding: 12 }}>
-                <Text medium fontSize={'1.5rem'} color={darkColor}>
+                <Text medium fontSize={'2.5rem'} color={darkColor}>
                     Look for me out there
                 </Text>
                 <br />

@@ -1,14 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import HeroBackGround from '../Hero/static/HeroBackground.png';
 import Text from '../components/Text';
 
 const Container = styled.div`
-    background-image: url(${HeroBackGround});
+    background-color: #252525;
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    height: 110px;
     padding: 56px;
 
     @media only screen and (max-width: 768px) {
@@ -16,7 +14,11 @@ const Container = styled.div`
     }
 `;
 
-const ResponsiveText = styled(Text)`@media only screen and (max-width: 768px) {text-align: left !important;}`;
+const ResponsiveText = styled(Text)`
+    @media only screen and (max-width: 768px) {
+        text-align: left !important;
+    }
+`;
 const Footer = props => (
     <Container>
         <Text medium fontSize={'1.3rem'}>

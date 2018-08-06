@@ -15,13 +15,13 @@ import * as colors from 'material-ui/colors';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
 const styledTheme = {
-    primary: '#FF9800',
+    primary: colors.blue[500],
     textColor: 'rgba(255, 255, 255, 0.86)',
     maxWidth: '1600px',
 };
 const theme = createMuiTheme({
     palette: {
-        primary: colors.orange,
+        primary: colors.blue,
     },
     typography: {
         fontFamily: 'Open-sans',
