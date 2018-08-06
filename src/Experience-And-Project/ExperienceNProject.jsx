@@ -32,7 +32,7 @@ class ExperienceNProject extends PureComponent {
                     color={'white'}
                     main={'MY '}
                     mainColored={'EXPERIENCE'}
-                    subtitle={'Some cool stuff I worked on'}
+                    subtitle={'Some cool stuffs I worked on'}
                 />
                 <TabsContainer centered value={this.state.index} onChange={(e, index) => this.handleChangeIndex(index)}>
                     <Tab label="Work experience" />

@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Text = styled.span`
+    white-space: pre-line;
     transition: all 0.3s ease;
     animation: fadeInLeft 0.7s ease 1;
     animation-fill-mode: both;
@@ -31,4 +32,6 @@ export const StrongText = styled(Text)`
         font-size: 1.3rem;
     }
 `;
-export const ExpandedText = styled(Text)`line-height: 28px;`;
+export const ExpandedText = styled(Text)`
+    line-height: 28px;
+`;

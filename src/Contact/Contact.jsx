@@ -12,8 +12,8 @@ const contacts = [
     {
         medium: 'phone',
         title: 'Phone',
-        subtitle: '0465947537',
-        link: 'tel:0465947537',
+        subtitle: '0402159666',
+        link: 'tel:0402159666',
     },
     {
         medium: 'envelope',

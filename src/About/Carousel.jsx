@@ -4,7 +4,7 @@ import _ from 'lodash';
 
 const LayoutWrapper = styled.div`
     display: flex;
-    jusitfy-content: center;
+    justify-content: center;
 `;
 const Bulb = styled.div`
     transition: all ease 0.7s;

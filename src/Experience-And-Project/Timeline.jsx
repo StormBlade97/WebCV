@@ -13,9 +13,28 @@ import { Link } from 'react-router-dom';
 
 const workExperience = [
     {
+        title: 'Vantaa Kultturia & Vantaa Liikkuva @Gofore',
+        subtitle: 'Front-End Developer, UI/UX Designer',
+        timestamp: '04.2018 → Present',
+        skillset: ['nodejs', 'react', 'mobx', 'aws', 'progressive web apps', 'docker', 'nestjs', 'design'],
+        content: `Helped the City of Vantaa with two open-source progressive web apps for cultural activities and health care. The apps were regarded to be the best products the client has ever had.
+        Designed the UI. Worked in tandem with user researcher for UX.
+        Architected and developed the front end.
+        Helped fix bugs and suggested technology for the back end, such as Docker. Suggested security strategies such as PIN exponential backoff, hashing passwords in databases, etc`,
+    },
+    {
+        title: 'Nae Gofore @Gofore',
+        subtitle: 'Developer, Designer',
+        timestamp: '01.2018 → 04.2018',
+        skillset: ['nodejs', 'design', 'python', 'leadership', 'conversational UI', 'UI/UX design'],
+        content: `Helped improve the company’s internal Slack bot via means of changing working methods as well as design. The changes were welcomed by users and helped raise awareness about managerial issues.
+        Designed and implemented the style of the bot’s messages. Conducted user research.
+        Also Proposed and helped facilitate team reform and migration to a better technology stack`,
+    },
+    {
         title: 'Petsofi @Medisapiens',
         subtitle: 'Front-End Developer, Designer',
-        timestamp: '10.2017 → Present',
+        timestamp: '10.2017 → 12.2017',
         skillset: [
             'javascript',
             'webapplication',
@@ -88,7 +107,8 @@ const projects = [
                 Designed the UI and implemented the frontend and some backend of a simple chat room application with
                 modern look and feel. The front end is built using the React/Redux and the backend is built using Node,
                 Express. The application was designed to be responsive and supports mobile devices. The application
-                features audial and haptic feedback, and can sustain network instability with service worker.{'\n'}
+                features audial and haptic feedback, and can sustain network instability with service worker.
+                {'\n'}
                 Check it out here:{' '}
                 <Text bold>
                     <Link to="https://chatapp-thanhnguyen.herokuapp.com" target="_blank">
@@ -159,7 +179,9 @@ const Wrapper = styled(Grid)`
     margin: 0 !important;
     width: 100% !important;
 `;
-const ContentBox = styled(Grid)`justify-content: center !important;`;
+const ContentBox = styled(Grid)`
+    justify-content: center !important;
+`;
 const ResponsiveText = styled(Text)`
     @media only screen and (max-width: 768px) {
         font-size: 0.9rem;
@@ -184,8 +206,7 @@ class Timeline extends PureComponent {
                             title={project.title}
                             subtitle={project.subtitle}
                             tags={project.skillset}
-                            timestamp={project.timestamp}
-                        >
+                            timestamp={project.timestamp}>
                             <ResponsiveText light>{project.content}</ResponsiveText>
                         </Panel>
                     ))}

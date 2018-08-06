@@ -14,7 +14,9 @@ const TextBox = styled(Grid)`
     flex-direction: column;
     padding: 24px !important;
 `;
-const LogoBox = styled(IconBox)`padding-bottom: 12px;`;
+const LogoBox = styled(IconBox)`
+    padding-bottom: 12px;
+`;
 const LogoGrid = styled(Grid)`
     position: relative;
     background: ${grey[900]};
@@ -78,6 +80,7 @@ class MySkills extends PureComponent {
                         <LogoBox>
                             <Icon color={colors.yellow['A200']} type="javascript" />
                             <Icon color={colors.lightBlue['A200']} type="react" />
+                            <Icon color={colors.red['A200']} type="angularjs" />
                             <ReduxIcon color={colors.deepPurple['A200']} size={'56px'} spacing={8} />
                             <Icon color={colors.blue['A200']} type="jquery" />
                             <Icon color={colors.lightGreen['A200']} type="nodejs" />

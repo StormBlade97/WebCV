@@ -3,7 +3,7 @@ import Button from 'material-ui/Button';
 import Text from '../components/Text';
 import styled from 'styled-components';
 import Icon from '../components/Icon';
-import CV from '../static/CV2017-ThanhNguyen.pdf';
+import CV from '../static/CV2018-ThanhNguyen.pdf';
 
 const VAlignWrapper = styled.div`
     display: flex;
@@ -23,7 +23,7 @@ const TextBox = styled.div`
     justify-content: center;
 `;
 const Headlines = styled(Text)`
-    font-size: 4rem;
+    font-size: 3.5rem;
     color: ${props => props.color || props.theme.primary};
 
     @media only screen and (max-width: 1200px) {
@@ -34,7 +34,7 @@ const Headlines = styled(Text)`
     }
 `;
 const JobTitle = styled(Text)`
-    font-size: 1.8rem;
+    font-size: 1.5rem;
     color: ${props => props.theme.textColor};
     margin-bottom: 40px;
 
@@ -50,17 +50,18 @@ const JobTitle = styled(Text)`
 const HeadlineBlock = styled.div`
     display: flex;
     flex-direction: column;
+    margin-bottom: 1rem;
 `;
 const ReadMoreButton = styled(Button)`
-    background-color: ${props => props.theme.primary} !important;
-    color: ${props => props.theme.textColor} !important;
-    font-family: 'Montserrat', sans-serif !important;
-    display: inline !important;
-    width: 11rem !important;
-    border-radius: 2em !important;
-    padding-top: 1rem !important;
-    padding-bottom: 1rem !important;
-    text-align: center;
+    &&& {
+        align-self: flex-start;
+        background-color: ${props => props.theme.primary};
+        color: ${props => props.theme.textColor};
+        font-family: 'Montserrat', sans-serif;
+        border-radius: 2em;
+        padding: 0.8rem 2rem;
+        text-align: center;
+    }
 
     @media only screen and (max-width: 1200px) {
         font-size: 0.8rem !important;
@@ -78,7 +79,7 @@ const InfoBox = props => (
                 </Headlines>
                 <Headlines bold>Thanh Nguyen</Headlines>
             </HeadlineBlock>
-            <JobTitle light>Front-End Developer in Helsinki, Finland</JobTitle>
+            <JobTitle light>Front-End to Full-Stack Developer. UX Designer</JobTitle>
         </TextBox>
         <ReadMoreButton href={`${CV}`} download raised>
             {
@@ -86,9 +87,9 @@ const InfoBox = props => (
                     size={'0.8rem'}
                     animate={false}
                     iconClassName={'fa fa-download'}
-                    style={{ margin: 0, padding: 0 }}
+                    style={{ padding: 0, margin: '0 0.5rem 0 0' }}
                 />
-            }{' '}
+            }
             Paper CV
         </ReadMoreButton>
     </VAlignWrapper>
